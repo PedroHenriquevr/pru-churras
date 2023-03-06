@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Cara e Coroa
+      Cara ou Coroa
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -16,7 +16,7 @@
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar class="btn" color="dark">
-    <ion-title onclick="jogarMoeda()" class="ion-text-center">Jogar a moeda</ion-title>
+  <ion-toolbar (click)="jogarMoeda()" class="btn" color="dark">
+    <ion-title class="ion-text-center">Jogar a moeda</ion-title>
   </ion-toolbar>
 </ion-footer>
