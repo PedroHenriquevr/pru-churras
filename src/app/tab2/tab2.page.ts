@@ -28,26 +28,30 @@ export class Tab2Page {
     if(team === 1 ){
       this.pontuacaoA += this.inicial;
       this.checarVitoria()
+      this.inicial = 1;
     }
     if(team === 2){
       this.pontuacaoB += this.inicial;
       this.checarVitoria()
+      this.inicial = 1;
     }
 
   }
 
   tirarTento(team: number){
     if(team === 1 && this.pontuacaoA > 0){
+      this.pontuacaoA -= this.inicial;
       if(this.pontuacaoA <= 0){
         this.pontuacaoA = 0
       }
-      this.pontuacaoA -= this.inicial;
+      this.inicial = 1;
     }
     if(team === 2 && this.pontuacaoB > 0){
+      this.pontuacaoB -= this.inicial;
       if(this.pontuacaoB <= 0){
         this.pontuacaoB = 0
       }
-      this.pontuacaoB -= this.inicial;
+      this.inicial = 1;
     }
   }
 
@@ -71,6 +75,14 @@ export class Tab2Page {
     if(team === 2){
       this.vitoriaB++
     }
+  }
+
+  limpar(){
+    this.inicial = 1;
+    this.pontuacaoA = 0;
+    this.pontuacaoB = 0;
+    this.vitoriaA = 0;
+    this.vitoriaB = 0;
   }
 
 
