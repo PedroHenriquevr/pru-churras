@@ -1,29 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Contador de truco </ion-title>
+    <ion-title> Contador de Tento </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="container">
-    <h1 class="atual-point ion-text-center">Valendo:</h1>
-    <div class="itens">
+  <div class="fundo">
+    <div class="pontuacao">
+    <h1 class="">Valendo: {{inicial}}</h1>
+  </div>
       <ion-grid>
         <ion-row>
           <ion-col>
-            <ion-button color="dark" expand="block"> 1 </ion-button>
+            <ion-button (click)="contarTento(1)" color="warning" expand="block"> 1 </ion-button>
           </ion-col>
           <ion-col>
-            <ion-button color="dark" expand="block">3</ion-button>
+            <ion-button (click)="contarTento(3)" color="warning" expand="block">3</ion-button>
           </ion-col>
           <ion-col>
-            <ion-button color="dark" expand="block">6</ion-button>
+            <ion-button (click)="contarTento(6)" color="warning" expand="block">6</ion-button>
           </ion-col>
           <ion-col>
-            <ion-button color="dark" expand="block">9</ion-button>
+            <ion-button (click)="contarTento(9)" color="warning" expand="block">9</ion-button>
           </ion-col>
           <ion-col>
-            <ion-button color="dark" expand="block">12</ion-button>
+            <ion-button (click)="contarTento(12)" color="warning" expand="block">12</ion-button>
           </ion-col>
         </ion-row>
         <ion-row>
@@ -37,52 +38,60 @@
         </ion-row>
         <ion-row>
           <ion-col>
-            <ion-button color="dark" expand="block">+</ion-button>
+            <ion-button (click)="subirTento(1)" color="warning" expand="block">+</ion-button>
           </ion-col>
           <ion-col></ion-col>
           <ion-col>
-            <ion-button color="dark" expand="block">+</ion-button>
+            <ion-button (click)="subirTento(2)" color="warning" expand="block">+</ion-button>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col>
-            <h1 class="ion-text-center center-point">pontos</h1>
+            <h1 class="ion-text-center valores">{{pontuacaoA}}</h1>
           </ion-col>
           <ion-col></ion-col>
           <ion-col>
-            <h1 class="ion-text-center center-point">pontos</h1>
+            <h1 class="ion-text-center valores">{{pontuacaoB}}</h1>
           </ion-col>
         </ion-row>
         <ion-row>
           <ion-col
-            ><ion-button color="dark" expand="block">-</ion-button></ion-col
+            ><ion-button (click)="tirarTento(1)" color="dark" expand="block">-</ion-button></ion-col
           >
           <ion-col></ion-col>
           <ion-col
-            ><ion-button color="dark" expand="block">-</ion-button></ion-col
+            ><ion-button (click)="tirarTento(2)" color="dark" expand="block">-</ion-button></ion-col
           >
         </ion-row>
       </ion-grid>
-      <h1>PARTIDAS</h1>
-      <ion-card>
-        <ion-item>
-          <ion-label>TIME 1</ion-label>
-          <ion-chip slot="end">
-            <ion-label>vitorias</ion-label>
-          </ion-chip>
-        </ion-item>
-        <ion-item>
-          <ion-label>TIME 2</ion-label>
-          <ion-chip slot="end">
-            <ion-label>vitorias</ion-label>
-          </ion-chip>
-        </ion-item>
-      </ion-card>
+
+      <h1>Vitórias</h1>
+      <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-button color="dark" expand="block">LIMPAR</ion-button>
+          <h1 class="ion-text-center ">Nós</h1>
+        </ion-col>
+        <ion-col></ion-col>
+        <ion-col>
+          <h1 class="ion-text-center ">Eles</h1>
+        </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <h1 class="ion-text-center ">{{vitoriaA}}</h1>
+          </ion-col>
+          <ion-col>
+            <h1 class="ion-text-center ">x</h1>
+          </ion-col>
+          <ion-col>
+            <h1 class="ion-text-center ">{{vitoriaB}}</h1>
+          </ion-col>
+        </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button color="dark" expand="block">ZERAR</ion-button>
         </ion-col>
       </ion-row>
-    </div>
+    </ion-grid>
   </div>
 </ion-content>
