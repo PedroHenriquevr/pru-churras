@@ -18,7 +18,7 @@ export class Tab2Page {
   vitoriaB = 0;
 
 
-  constructor(){}
+  constructor( private alertController: AlertController ){}
 
   contarTento(valor: number) {
     this.inicial = valor;
@@ -59,11 +59,13 @@ export class Tab2Page {
     if(this.pontuacaoA >= 12){
       this.pontuacaoA = 0;
       this.pontuacaoB = 0;
+      this.presentAlert();
       this.vitoriaA++;
     }
     else if(this.pontuacaoB >= 12){
       this.pontuacaoA = 0;
       this.pontuacaoB = 0;
+      this.presentAlert();
       this.vitoriaB++;
     }
   }
@@ -85,5 +87,14 @@ export class Tab2Page {
     this.vitoriaB = 0;
   }
 
+  async presentAlert() {
+    const ganhou = await this.alertController.create({
+      header: 'GANHOU',
+      subHeader: 'Foi facil demais!!!',
+      buttons: ['Continuar'],
+    });
+
+    await ganhou.present();
+  }
 
 }
